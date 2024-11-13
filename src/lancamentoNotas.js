@@ -1,29 +1,22 @@
-// lancamentoNotas.js
-
 function lancarNota(nota1, nota2) {
-    // Função para validar se a nota é numérica e dentro do intervalo esperado
-    function validarNota(nota) {
-        return !isNaN(nota) && typeof nota === 'number' && nota >= 0.0 && nota <= 10.0 && (nota * 10) % 10 === 0;
+    if (typeof nota1 !== "number" || typeof nota2 !== "number") {
+      throw new Error("Entradas devem ser numéricas");
     }
-
-    // Verificar se as duas notas são válidas e numéricas
-    if (typeof nota1 !== 'number' || isNaN(nota1)) {
-        throw new Error('Entradas devem ser numéricas');
+  
+    if (nota1 < 0.0 || nota1 > 10.0 || Math.round(nota1 * 10) !== nota1 * 10) {
+      throw new Error(
+        "Nota de 1UP inválida. A nota deve ser um número entre 0.0 e 10.0 com uma casa decimal."
+      );
     }
-    if (typeof nota2 !== 'number' || isNaN(nota2)) {
-        throw new Error('Entradas devem ser numéricas');
+  
+    if (nota2 < 0.0 || nota2 > 10.0 || Math.round(nota2 * 10) !== nota2 * 10) {
+      throw new Error(
+        "Nota de 2UP inválida. A nota deve ser um número entre 0.0 e 10.0 com uma casa decimal."
+      );
     }
-
-    if (!validarNota(nota1)) {
-        throw new Error('Nota de 1UP inválida. A nota deve ser um número entre 0.0 e 10.0 com uma casa decimal.');
-    }
-    else if (!validarNota(nota2)) {
-        throw new Error('Nota de 2UP inválida. A nota deve ser um número entre 0.0 e 10.0 com uma casa decimal.');
-    }
-
-    // Se as notas são válidas, podemos armazená-las ou processá-las (aqui apenas retornamos como exemplo)
-    return { nota1, nota2 };
-}
-
-
-module.exports = { lancarNota};
+  
+    return "Notas salvas com sucesso!";
+  }
+  
+  module.exports = { lancarNota };
+  
