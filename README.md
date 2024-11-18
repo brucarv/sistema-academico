@@ -31,18 +31,18 @@ Cada módulo utiliza *module.exports* e *require* para integração entre si.
 
 ### Passo a Passo
 
-1. *Clone o Repositório*
+1. Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/sistema-academico.git
+git clone <url-do-repositório>
 ```
 
 2. Navegue até o diretório do projeto:
 ```bash
-cd sistema-academico
+cd <caminho-para-diretório>
 ```
 
-Instale as dependências:
+Instale as dependências do projeto:
 ```bash
 npm install
 ```
